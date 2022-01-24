@@ -5,8 +5,6 @@ HTML 5
 CSS 3
 Bootstrap
 JavaScript
-Application is Live here Netlity Link
-Features
 This Task Planner App. provides following basic features
 
 Add task to application with Subject, date, time and detailed description.
@@ -22,6 +20,3 @@ Task Manager Class - It is one of the major class which has methods to Add, Dele
 Task Class provides the features of creating html element of the task to add to DOM dynamically.
 Testing
 The Testing of The all Javascript classes and methods has been done Using Jest.js
-
-Link to live Page 💻
-Repo is Live at Netlify Netlity Link
