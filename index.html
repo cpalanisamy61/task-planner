@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylemain.css">
+    <title>Task Planner</title>
+</head>
+
+<body>
+
+    <header class="masthead text-center text-white">
+        <div class="masthead-content">
+            <div class="container">
+                <h1 class="masthead-heading mb-0">Task Planner</h1>
+                <h1 class="masthead-subheading mb-0">Anu</h1>
+            </div>
+        </div>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
+        <div class="bg-circle-3 bg-circle"></div>
+        <div class="bg-circle-4 bg-circle"></div>
+    </header>
+
+    <!-- <nav class="navbar-nav fixed-top" id="navbarTop">
+        <h1 class="text-center"> Task Planner</h1>
+
+    </nav> -->
+
+    <div class="container-fluid mt-100">
+
+        <div class="mt-5">
+            <button class="btn btn-wide btn-primary btnNewStyle" data-toggle="modal" data-target="#addModal"> Add Task </button>
+            <!-- <button class="btn btn-wide btn-primary btnNewStyle" id="todayTask"> Current Task </button> -->
+
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Status
+                </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <button class="dropdown-item" value="In Progress" id="inprogress">In Progress</button>
+                <button class="dropdown-item" value="To Do" id="todo">To Do</button>
+                <button class="dropdown-item" value="Review" id="review">Review</button>
+                <button class="dropdown-item" value="Done" id="done">Done</button>
+                <button class="dropdown-item" value="All Tasks" id="allTask">All Tasks</button>
+            </div>
+
+        </div>
+        <br>
+        <div id="tasksummary">
+            <!-- <div class="card-header pl-0 pr-0">
+                <div class="row no-gutters w-100 align-items-center">
+                    <div class="col ml-3">Tasks</div>
+                    <div class="col-4 text-muted">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col">Edit/Delete</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body py-3">
+                <div class="row no-gutters align-items-center">
+                    <div class="col"> <a href="javascript:void(0)" class="text-big" data-abc="true">Sprint Stand up</a>
+                    </div>
+                    <div class="col-4 text-muted">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col"><img src="images/expanddown.svg"><img src="images/pencil.svg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             -->
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="addModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Task</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                </div>
+
+                <form id="task-form">
+                    <div class="modal-body">
+                        <input type="text" id="task-id" hidden>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="taskname">Task Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="taskName">
+                                <span id="errMsg1" class="validMessage"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="taskdescription">Description</label>
+                            <div class="col-sm-9">
+                                <input type="textarea" class="form-control" id="textDescription">
+                                <span id="errMsg2" class="spanclass"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="assignedto">Assigned To</label>
+                            <div class="col-sm-9">
+                                <input type="dropdown" class="form-control" id="assignedTo">
+                                <span id="errMsg3" class="spanclass"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="duedate">Due Date</label>
+                            <div class="col-sm-9">
+                                <input type="date" class="form-control" id="dueDate" max="2021-12-31" min="2020-08-05" required>
+                                <span id="errMsg4" class="spanclass"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="status">Status</label>
+                            <div class="col-sm-6">
+                                <select id="taskStatus" name="status" class="col-sm-6">
+                                        <option value="Please choose">Please Choose</option>
+                                         <option value="In Progress">In Progress</option>
+                                         <option value="To Do">To Do</option>
+                                         <option value="Review">Review</option>
+                                         <option value="Done">Done</option>
+                                </select>
+                                <span id="errMsg5" class="spanclass"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="modal-footer">
+                    <div class="modal-footer-group">
+                        <button class="btn btn-danger mr-2" type="button" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-success mr-2" type="submit" id="addTask">Add Task</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Task</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                </div>
+
+                <form id="task-form-edit">
+                    <div class="modal-body">
+                        <input type="text" id="editTaskID" hidden>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="taskname">Task Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="editTaskName">
+                                <span id="errMsg6"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="taskdescription">Description</label>
+                            <div class="col-sm-9">
+                                <input type="textarea" class="form-control" id="editTextDescription">
+                                <span id="errMsg7"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="assignedto">Assigned To</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="editAssignedTo">
+                                <span id="errMsg8"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="duedate">Due Date</label>
+                            <div class="col-sm-9">
+
+
+
+                                <input type="date" class="form-control" id="editDueDate" max="2021-12-31" min="2020-08-05" required>
+
+                                <span id="errMsg9"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="status">Status</label>
+                            <div class="col-sm-6">
+                                <select id="editTaskStatus" name="status" class="col-sm-6">
+                                        <option value="Please choose">Please Choose</option>
+                                        <option value="In Progress">In Progress</option>
+                                        <option value="To Do">To Do</option>
+                                        <option value="Review">Review</option>
+                                        <option value="Done">Done</option>
+                                     </select>
+                                <span id="errMsg10"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="modal-footer">
+                    <div class="modal-footer-group">
+                        <button class="btn btn-danger mr-2" type="button" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-success mr-2" type="submit" id="editTask">Update Task</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="fixed-bottom">
+        <p>Anuradha <a href="https://github.com/anusreeganesh" target="_blank"><i style="font-size:20px" class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/anuradha-m-melbourne/" target="_blank"><i style="font-size:20px" class="fa">&#xf0e1;</i></a> Parimala <a href="https://github.com/Pari184" target="_blank"><i style="font-size:20px" class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/parimalam-sellappan-4512bb9/" target="_blank"><i style="font-size:20px" class="fa">&#xf0e1;</i></a>&copy - All rights reserved
+
+        </p>
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="script1.js"></script>
+
+
+
+</body>
+
+</html>

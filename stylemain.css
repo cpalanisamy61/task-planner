@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: .90rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: black;
+    text-align: left;
+    background-color: white;
+}
+
+#bhead {
+    color: black;
+    font-weight: bold;
+    font-size: .85rem;
+}
+
+header.masthead {
+    position: relative;
+    overflow: hidden;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    background: linear-gradient(0deg, #088F99 0%, #29BFDA 100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+}
+header.masthead .masthead-content {
+    z-index: 1;
+    position: relative;
+}
+header.masthead .masthead-content .masthead-heading {
+    font-size: 4rem;
+}
+header.masthead .masthead-content .masthead-subheading {
+    font-size: 2rem;
+}
+header.masthead .bg-circle {
+    z-index: 0;
+    position: absolute;
+    border-radius: 100%;
+    background: linear-gradient(0deg, #09D3EE 0%, #197C6F 100%);
+}
+header.masthead .bg-circle-1 {
+    height: 90rem;
+    width: 90rem;
+    bottom: -55rem;
+    left: -55rem;
+}
+header.masthead .bg-circle-2 {
+    height: 50rem;
+    width: 50rem;
+    top: -25rem;
+    right: -25rem;
+}
+header.masthead .bg-circle-3 {
+    height: 20rem;
+    width: 20rem;
+    bottom: -10rem;
+    right: 5%;
+}
+header.masthead .bg-circle-4 {
+    height: 30rem;
+    width: 30rem;
+    top: -5rem;
+    right: 35%;
+}
+@media (min-width: 992px) {
+    header.masthead {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    header.masthead .masthead-content .masthead-heading {
+        font-size: 4rem;
+    }
+    header.masthead .masthead-content .masthead-subheading {
+        font-size: 4rem;
+    }
+}
+
+
+.mt-100 {
+    margin-top: 80px
+}
+
+.btn.btn-wide {
+    padding: .375rem 1.5rem;
+    font-size: 1.0rem;
+    line-height: 1.5;
+    border-radius: 10rem;
+}
+
+.btnNewStyle {
+    color: #fff;
+    background: linear-gradient(50deg, #107994 0, #058F71 100%);
+}
+
+.btn-danger {
+    color: #fff;
+    background: linear-gradient(50deg, #f01607, #d17126, 100%);
+    border-color: rgb(238, 37, 10);
+}
+
+.btnNewStyle:hover {
+    color: #06226E;
+    background-color: #fff;
+    border-color: #06226E;
+}
+
+p {
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    padding: 20px;
+    margin-top: 20px;
+    width: 60%
+}
+
+#dropdownMenuLink {
+    float: right;
+    width: 100px;
+    margin-right: 20px;
+    border-radius: 2rem;
+    background: linear-gradient(50deg, #107994 0, #058F71 100%);
+}
+
+#dropdownMenuLink:hover {
+    color: #06226E;
+    background-color: #fff;
+    border-color: #06226E;
+}
+
+.modal-header {
+    background: linear-gradient(50deg, #107994 0, #058F71 100%);
+}
+
+.modal-body {
+    background-color: white;
+    border-top-left-radius: 4rem;
+    border-top-right-radius: 4rem;
+}
+
+.modal-footer {
+    background-color: white;
+}
+
+footer {
+    background: linear-gradient(50deg, #107994 0, #058F71 100%);
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+#navbarTop {
+    background: linear-gradient(50deg, #107994 0, #058F71 100%);
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+footer>p {
+    padding: 10px
+}
